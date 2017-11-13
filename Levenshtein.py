@@ -16,6 +16,23 @@ def getMinimum(Array, zeile, spalte,matchCost):
  mMatch=int(Array[zeile-1][spalte-1])+matchCost
  return min([left,up,mMatch])
 
+def aufStellenAuffuellen(text, stellen=2):
+ fehlen=stellen-len(text)
+ return text + " " * fehlen
+
+def arrayFormatieren(array):
+ length = len(max(str(array[-1])))
+ print('Länge: ',length)
+ array_new = array
+ for zIndex,zeile in enumerate(array):
+  for iIndex,wert in enumerate(zeile):
+   array_new[zIndex][iIndex]=aufStellenAuffuellen(str(wert),length)
+ return array_new
+
+def printArray(array):
+ for zeile in  array:
+  print(zeile)
+
 #Array vorbereiten
 for i in range(len(seq1)):
  array[i][0]=i
@@ -33,5 +50,8 @@ for zeS in seq1[1:]:
 
 levenshtein=array[zeile][spalte-1] #Letzten Wert holen
 print (array)
+printArray(array)
 print ("Levenshtein: ",levenshtein)
+print ('Formatiert (experimentel): ')
+printArray(arrayFormatieren(array))
 #Array sollte jetzt fertig sein
