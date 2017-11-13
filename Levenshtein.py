@@ -18,10 +18,10 @@ def getMinimum(Array, zeile, spalte,matchCost):
 
 def aufStellenAuffuellen(text, stellen=2):
  fehlen=stellen-len(text)
- return text + " " * fehlen
+ return str(text) + " " * fehlen
 
 def arrayFormatieren(array):
- length = len(max(str(array[-1])))
+ length = len(str(max(array[0])))
  print('Länge: ',length)
  array_new = array
  for zIndex,zeile in enumerate(array):
@@ -31,7 +31,7 @@ def arrayFormatieren(array):
 
 def printArray(array):
  for zeile in  array:
-  print(zeile)
+  print(str(zeile)[1:-1].replace('\'',''))
 
 #Array vorbereiten
 for i in range(len(seq1)):
