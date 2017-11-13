@@ -7,5 +7,5 @@ blastdbcmd -db dbNAme -entry all -range 100-200
 #Color Primer Seuquences
 egrep -color '(Primer1|Primer2-Rev-Transkript)'
 
-#Blast against remote
-blastn -db nr -remote -query 'Sequence' -out ErgDatei.txt -html
+#Blast against remote nucleotide Database (blastp for proteins)
+blastn -db nr -remote -query 'Sequence' -out ErgDatei.txt -html (-task blastn-short)
